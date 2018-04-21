@@ -1,0 +1,22 @@
+body{
+	background-color: rgb(38, 38, 38);
+}
+
+.box{
+	background: pink;
+	width: 30%;
+	padding-bottom: 30%;
+	float: left;
+	margin: 1.5%;
+
+}
+
+.center{
+	margin:0px auto;
+	max-width: 60%;
+
+}
+
+h1{
+	color: white;
+}
