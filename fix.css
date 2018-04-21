@@ -3,7 +3,7 @@ body{
 }
 
 .box{
-	background: pink;
+	background:;
 	width: 30%;
 	padding-bottom: 30%;
 	float: left;
@@ -17,6 +17,6 @@ body{
 
 }
 
-h1{
+h1,p,span{
 	color: white;
 }
