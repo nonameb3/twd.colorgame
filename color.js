@@ -5,9 +5,26 @@ var pickcolor = color[pickcolors()];
 var i = 0;
 var head = document.querySelector("#head");
 
-// Start Head text color
+// Start Head Game text color choice
 var discolor = document.querySelector("#discolor");
 discolor.textContent = pickcolor;
+
+//NewGame Button
+var newgame = document.querySelector(".butnew");
+newgame.addEventListener("click",function(){
+	//gen new color
+	color = genarrycolor(6);
+	pickcolor = color[pickcolors()];
+	discolor.textContent = pickcolor ;
+		for (var i = 0; i < box.length ; i++) {
+			box[i].style.background = color[i];
+		}
+	//head no color
+	head.style.background = "" ;
+	//aws no text
+	var wrong = document.querySelector("#aws");
+	wrong.textContent = "" ;
+});
 
 
 // Start Main code

@@ -1,9 +1,24 @@
 body{
 	background-color: rgb(38, 38, 38);
+	margin: 0;
+	padding: 0;
+}
+
+#head{
+	text-align: center;
+	height: 120px;
+}
+
+#mid,#aws{
+	color: black;
+	background: white;
+	width: 100%;
+	height: 30px;
+	text-align: center;
 }
 
 .box{
-	background:;
+	background:rgb(38, 38, 38);
 	width: 30%;
 	padding-bottom: 30%;
 	float: left;
@@ -14,9 +29,18 @@ body{
 .center{
 	margin:0px auto;
 	max-width: 60%;
+	padding: 0;
 
 }
 
-h1,p,span{
+h1{
+	padding: 0;
+	margin: 0;
+	padding-top: 20px;
+
+}
+
+h1,span{
 	color: white;
 }
+
