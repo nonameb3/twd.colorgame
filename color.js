@@ -1,16 +1,15 @@
 var color = genarrycolor(6);
-
 var box = document.querySelectorAll(".box");
 var pickcolor = color[pickcolors()];
 var i = 0;
 var head = document.querySelector("#head");
+var discolor = document.querySelector("#discolor");
+var newgame = document.querySelector(".buttnew");
 
 // Start Head Game text color choice
-var discolor = document.querySelector("#discolor");
 discolor.textContent = pickcolor;
 
 //NewGame Button
-var newgame = document.querySelector(".butnew");
 newgame.addEventListener("click",function(){
 	//gen new color
 	color = genarrycolor(6);
@@ -27,14 +26,12 @@ newgame.addEventListener("click",function(){
 });
 
 
-// Start Main code
+// Start Main code for loop color
 box.forEach(function(box) {
     box.style.background = color[i];
     i++
     box.addEventListener("click", function() {
         var clickcolor = box.style.background;
-        // console.log(clickcolor)
-        // console.log(pickcolor)
         var wrong = document.querySelector("#aws");
         if (clickcolor == pickcolor) {
             wrong.textContent = "That right !!";
