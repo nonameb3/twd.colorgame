@@ -1,29 +1,59 @@
-var color = genarrycolor(6);
+var start = 6;
+var color = genarraycolor(start);
 var box = document.querySelectorAll(".box");
 var pickcolor = color[pickcolors()];
 var i = 0;
 var head = document.querySelector("#head");
 var discolor = document.querySelector("#discolor");
 var newgame = document.querySelector(".buttnew");
+var easybutt = document.querySelector("#easy");
+var hardbutt = document.querySelector("#hard");
+
+// Easy button
+easybutt.addEventListener("click", function() {
+    easybutt.classList.add("blue");
+    hardbutt.classList.remove("blue");
+    start = 3
+    reset()
+
+});
+
+// Hard button
+hardbutt.addEventListener("click", function() {
+    hardbutt.classList.add("blue");
+    easybutt.classList.remove("blue");
+    start = 6
+    reset()
+});
 
 // Start Head Game text color choice
 discolor.textContent = pickcolor;
 
 //NewGame Button
-newgame.addEventListener("click",function(){
-	//gen new color
-	color = genarrycolor(6);
-	pickcolor = color[pickcolors()];
-	discolor.textContent = pickcolor ;
-		for (var i = 0; i < box.length ; i++) {
-			box[i].style.background = color[i];
-		}
-	//head no color
-	head.style.background = "" ;
-	//aws no text
-	var wrong = document.querySelector("#aws");
-	wrong.textContent = "" ;
+newgame.addEventListener("click", function() {
+    reset()
 });
+
+//Function New Game
+function reset() {
+    //gen new color
+    color = genarraycolor(start);
+    pickcolor = color[pickcolors()];
+    discolor.textContent = pickcolor;
+    for (var i = 0; i < box.length; i++) {
+        if (color[i]) {
+            box[i].style.background = color[i];
+            box[i].style.display = "";
+        } else {
+            box[i].style.display = "none";
+        }
+    }
+    //head no color
+    head.style.background = "";
+    //aws no text
+    var wrong = document.querySelector("#aws");
+    wrong.textContent = "";
+};
 
 
 // Start Main code for loop color
@@ -58,7 +88,7 @@ function pickcolors() {
 };
 
 //Function Gen Array rgbcolor
-function genarrycolor(x) {
+function genarraycolor(x) {
     var array = [];
     for (i = 0; i < x; i++) {
         array.push(genrgb())
