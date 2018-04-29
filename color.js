@@ -1,30 +1,59 @@
 var start = 6;
-var color = genarraycolor(start);
-var box = document.querySelectorAll(".box");
-var pickcolor = color[pickcolors()];
+var color = [];
+var pickcolor;
 var i = 0;
+var box = document.querySelectorAll(".box");
 var head = document.querySelector("#head");
 var discolor = document.querySelector("#discolor");
 var newgame = document.querySelector(".buttnew");
 var easybutt = document.querySelector("#easy");
 var hardbutt = document.querySelector("#hard");
+var game ={};
 
-// Easy button
-easybutt.addEventListener("click", function() {
-    easybutt.classList.add("blue");
-    hardbutt.classList.remove("blue");
-    start = 3
-    reset()
+game.init = function(){
+    init();
+    reset();
+}
 
-});
+game.init();
 
-// Hard button
-hardbutt.addEventListener("click", function() {
-    hardbutt.classList.add("blue");
-    easybutt.classList.remove("blue");
-    start = 6
-    reset()
-});
+function init() {
+
+    // code Button
+    var mod = document.querySelectorAll("button");
+    for (var i =1 ; i <mod.length ; i++) {
+        mod[i].addEventListener("click",function(){
+            mod[1].classList.remove("blue");
+            mod[2].classList.remove("blue");
+            this.classList.add("blue");
+            this.textContent === "Easy" ? start = 3 : start = 6;
+            reset();
+        })
+    }
+
+    // Start Main code for loop color
+    box.forEach(function(box) {
+        box.style.background = color[i];
+        i++
+        box.addEventListener("click", function() {
+            var clickcolor = box.style.background;
+            var wrong = document.querySelector("#aws");
+            if (clickcolor == pickcolor) {
+                wrong.textContent = "That right !!";
+                newgame.textContent = "Play again?";
+                loopcolor(clickcolor);
+                head.style.background = clickcolor;
+
+            } else {
+                wrong.textContent = "Wrong,Play agin?";
+                this.setAttribute("style", "background: rgb(38, 38, 38);");
+            };
+        });
+        reset();
+    });
+    reset();
+}
+
 
 // Start Head Game text color choice
 discolor.textContent = pickcolor;
@@ -58,24 +87,24 @@ function reset() {
 
 
 // Start Main code for loop color
-box.forEach(function(box) {
-    box.style.background = color[i];
-    i++
-    box.addEventListener("click", function() {
-        var clickcolor = box.style.background;
-        var wrong = document.querySelector("#aws");
-        if (clickcolor == pickcolor) {
-            wrong.textContent = "That right !!";
-            newgame.textContent = "Play again?";
-            loopcolor(clickcolor);
-            head.style.background = clickcolor;
+// box.forEach(function(box) {
+//     box.style.background = color[i];
+//     i++
+//     box.addEventListener("click", function() {
+//         var clickcolor = box.style.background;
+//         var wrong = document.querySelector("#aws");
+//         if (clickcolor == pickcolor) {
+//             wrong.textContent = "That right !!";
+//             newgame.textContent = "Play again?";
+//             loopcolor(clickcolor);
+//             head.style.background = clickcolor;
 
-        } else {
-            wrong.textContent = "Wrong,Play agin?";
-            this.setAttribute("style", "background: rgb(38, 38, 38);");
-        };
-    });
-});
+//         } else {
+//             wrong.textContent = "Wrong,Play agin?";
+//             this.setAttribute("style", "background: rgb(38, 38, 38);");
+//         };
+//     });
+// });
 
 // Function chance Color to all box
 function loopcolor(corectcolor) {
