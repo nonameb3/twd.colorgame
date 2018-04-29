@@ -40,6 +40,7 @@ function reset() {
     color = genarraycolor(start);
     pickcolor = color[pickcolors()];
     discolor.textContent = pickcolor;
+    newgame.textContent = "New game!!";
     for (var i = 0; i < box.length; i++) {
         if (color[i]) {
             box[i].style.background = color[i];
@@ -65,11 +66,12 @@ box.forEach(function(box) {
         var wrong = document.querySelector("#aws");
         if (clickcolor == pickcolor) {
             wrong.textContent = "That right !!";
+            newgame.textContent = "Play again?";
             loopcolor(clickcolor);
             head.style.background = clickcolor;
 
         } else {
-            wrong.textContent = "Wrong Play agin?";
+            wrong.textContent = "Wrong,Play agin?";
             this.setAttribute("style", "background: rgb(38, 38, 38);");
         };
     });

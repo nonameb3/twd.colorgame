@@ -1,16 +1,16 @@
 body{
 	background-color: rgb(38, 38, 38);
 	margin: 0;
-	padding: 0;
 }
 
 #head{
 	text-align: center;
-	/*height: 120px;*/
 	background-color: steelblue;
 	background-attachment: fixed;
-	background-
+	text-transform: uppercase;
 	line-height: 1.2;
+	font-size: 140%;
+
 }
 
 #head h1{
@@ -18,7 +18,7 @@ body{
 }
 
 #discolor{
-	font-size: 30px;
+	font-size: 160%;
 	font-weight: bold;
 }
 
@@ -26,37 +26,52 @@ body{
 	color: black;
 	background: white;
 	width: 100%;
-	/*height: 30px;*/
 	text-align: center;
-	
 }
 
 #aws{
-	width: 30%;
+	width: 50%;
 	display: inline-block;
-	font-weight: bold;
+	text-transform: uppercase ;
 }	
 
 button{
 	border :none;
 	background-color:white;
-	font-size: 15px;
+	color: steelblue;
+	font-size: inherit;
+	font-weight: 700;
 	margin: auto;
 	padding: auto;
+	height: 30px;
+	text-transform: uppercase ;
+	transition: all 0.5s;
+	outline:none;
+}
+
+button:hover{
+	background-color:steelblue;
+	color: white;
 }
 
 .box{
-	background:rgb(38, 38, 38);
+	background:gold;
 	width: 30%;
 	padding-bottom: 30%;
 	float: left;
 	margin: 1.5%;
+	border-radius: 15%;
+	transition: all 0.7s;
 
+}
+
+#bot{
+	margin:20px auto;
 }
 
 .center{
 	margin:0px auto;
-	max-width: 60%;
+	max-width: 600px;
 	padding: 0;
 
 }
